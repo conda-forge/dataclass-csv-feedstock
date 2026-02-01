@@ -1,18 +1,18 @@
 {% set name = "dataclass-csv" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dataclass-csv-{{ version }}.tar.gz
-  sha256: 6a9207537ccdc3f381d50c3f5d053ce5a92ef0d61850f7a159e3f52eb79f0402
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: ec1df2893289bc58fa8d40a752bbfce4576f2289f6c06b8c944f802321dfba5a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
